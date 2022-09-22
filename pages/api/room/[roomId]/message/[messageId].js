@@ -2,6 +2,7 @@ import { writeDB, readDB } from "../../../../../backendLibs/dbLib";
 
 export default function roomIdMessageIdRoute(req, res) {
   //read value from URL
+  const rooms = readDB();
   const roomId = req.query.roomId;
   const messageId = req.query.messageId;
   const roomsId = rooms.find((x) => x.roomId === roomId);
